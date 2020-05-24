@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
+
 
 require('dotenv/config');
 
@@ -17,12 +19,20 @@ mongoose
     process.exit();
   });
 
+
+
+  
+
 //IMPORT ROUTES
-const routes = require('./routes/routes');
+const routes = require('./src/routes/routes');
+const users = require('./src/routes/user');
 
 //MIDDLEWARE
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use('/', routes);
-
+app.use('/user', users);
 
 
 app.listen(3000);
