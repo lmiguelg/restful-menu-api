@@ -19,10 +19,6 @@ mongoose
     process.exit();
   });
 
-
-
-  
-
 //IMPORT ROUTES
 const routes = require('./src/routes/routes');
 const users = require('./src/routes/user');
