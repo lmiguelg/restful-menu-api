@@ -1,0 +1,25 @@
+Response Content Type: application/json
+
+############    AUTH    #################
+POST: /user/signup
+    Description:
+    Parameters:
+        name
+        email
+        password
+    Response:
+        Token
+
+POST: /user/login
+    Description:
+    Parameters:
+        email
+        password
+    Response:
+        Token
+
+GET: /user/me
+    Description:get user logged in
+    headers:token obtained on login
+
+        
