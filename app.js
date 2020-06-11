@@ -27,6 +27,7 @@ const users = require('./src/routes/user');
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use('/', routes);
 app.use('/user', users);
 
